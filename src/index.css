@@ -1,0 +1,32 @@
+body {
+  padding: 0 0 6.125rem;
+  background-color: #fcfcfc;
+}
+.header {
+  margin: 0 0 4.375rem;
+  padding: 2.75rem 0 2.625rem 10vw;
+  box-shadow: 0 1px 4px 0 rgba(0, 21, 41, 0.12);
+  background-image: linear-gradient(to bottom, #ececec -32%, #fff 124%);
+}
+.header-title {
+  object-fit: contain;
+  font-family: Baskerville;
+  font-size: 1.75rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #3b3b3b;
+}
+.content-block {
+  margin: 2.375rem 10vw;
+  display: grid;
+  justify-content: center;
+  gap: 2rem 3rem;
+}
+@media (min-width: 768px) {
+  .content-block {
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
