@@ -1,5 +1,5 @@
 import React from 'react'
-import WordScramble from './components/wordScramble';
+import WordScrambleMain from './components/wordScrambleMain';
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <div className="header">
         <span className="header-title">CUSTOM TATOEBA UTILITIES</span>
       </div>
-      <WordScramble/>
+      <WordScrambleMain/>
     </div>
   );
 }

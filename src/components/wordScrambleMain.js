@@ -3,9 +3,9 @@ import Stack from '@mui/material/Stack';
 import LangFlag from './langFlag';
 import ControlRow from './controlRow'
 import { Info } from '@mui/icons-material'
-import './wordScramble.css'
+import './wordScrambleMain.css'
 
-const WordScramble = () => {
+const WordScrambleMain = () => {
     const defSentence = { sentence: {
         text: "Hit [Next] to start",
         lang: "unknown",
@@ -13,9 +13,9 @@ const WordScramble = () => {
         translations: [[]]
     }}
     const [sentence, setSentence] = useState(defSentence)
-    // Home page outline
+    // Component outline
     return (
-        <div className="wordScramble">
+        <div className="wordScrambleMain">
             <Stack direction="column" alignItems="flex-start" width="inherit">
                 <ControlRow setSentence={setSentence}/>
                 <Stack direction="row">
@@ -41,4 +41,4 @@ const WordScramble = () => {
     )
 }
 
-export default WordScramble
+export default WordScrambleMain
