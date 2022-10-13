@@ -2,6 +2,10 @@
     width: 40rem;
     margin: 0 auto;
 }
+.lang-select {
+    width: 10rem;
+    margin: 0 1rem;
+}
 .mainSentenceRow {
     display: flex;
     width: inherit;

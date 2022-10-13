@@ -24,7 +24,7 @@ const WordScrambleMain = () => {
                 <div className="mainSentenceRow">
                     <a href={`https://tatoeba.org/en/sentences/show/${sentence.sentence.id}`}
                         className="info-cell">
-                        <Info color="action" paddingLeft="0.3rem"/>
+                        <Info color="action"/>
                     </a>
                     <LangFlag lang={sentence.sentence.lang}/>
                     <h2 className="mainSentence">{sentence.sentence.text}</h2>
