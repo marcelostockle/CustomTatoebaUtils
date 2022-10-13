@@ -1,3 +1,5 @@
 .langFlag {
   margin: auto 0.8rem;
+  border-style: outset;
+  border-width: 2px;
 }
