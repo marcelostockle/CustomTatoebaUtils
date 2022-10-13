@@ -1,0 +1,41 @@
+.wordScrambleMain {
+    width: 40rem;
+    margin: 0 auto;
+}
+.mainSentenceRow {
+    display: flex;
+    width: inherit;
+    background-color:beige;
+}
+.translationRow {
+    margin: 0.3rem 0;
+    display: flex;
+    align-items: center;
+    width: inherit;
+}
+.inlineBlank {
+    padding: 0.1rem 0.9rem;
+    margin: 0.2rem 0.2rem 0 0.2rem;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: darkcyan;
+}
+.draggablesTop {
+    width: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: honeydew;
+}
+.draggable {
+    padding: 0.1rem 0.2rem;
+    margin: 0.2rem 0.2rem 0 0.2rem;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color:darkslategray;
+}
+.draggable:hover {
+    background-color:salmon;
+}

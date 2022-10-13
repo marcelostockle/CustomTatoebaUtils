@@ -3,7 +3,9 @@ import Stack from '@mui/material/Stack';
 import LangFlag from './langFlag';
 import ControlRow from './controlRow'
 import { Info } from '@mui/icons-material'
-import './wordScrambleMain.css'
+import ScramblePrompt from './scramblePrompt';
+import ScrambleDraggables from './scrambleDraggables';
+import './wordScramble.css'
 
 const WordScrambleMain = () => {
     const defSentence = { sentence: {
@@ -18,22 +20,25 @@ const WordScrambleMain = () => {
         <div className="wordScrambleMain">
             <Stack direction="column" alignItems="flex-start" width="inherit">
                 <ControlRow setSentence={setSentence}/>
-                <Stack direction="row">
+                <div className="mainSentenceRow">
                     <a href={`https://tatoeba.org/en/sentences/show/${sentence.sentence.id}`}
                         style={{display: "flex", alignItems: "center"}}>
                         <Info color="action"/>
                     </a>
                     <LangFlag lang={sentence.sentence.lang}/>
                     <h2 className="mainSentence">{sentence.sentence.text}</h2>
-                </Stack>
+                </div>
                 {sentence.sentence.translations[0].map(tSentence =>
-                    <Stack key={`s${tSentence.id}`} direction="row">
-                        <a href={`https://tatoeba.org/en/sentences/show/${tSentence.id}`}
-                            style={{display: "flex", alignItems: "center"}}>
-                            <Info color="action"/>
-                        </a>
-                        <LangFlag lang={tSentence.lang}/>
-                        <h4 className="tSentence">{tSentence.text}</h4>
+                    <Stack key={`s${tSentence.id}`} direction="column" width="inherit">
+                        <div className="translationRow">
+                            <a href={`https://tatoeba.org/en/sentences/show/${tSentence.id}`}
+                                style={{display: "flex", alignItems: "center"}}>
+                                <Info color="action"/>
+                            </a>
+                            <LangFlag lang={tSentence.lang}/>
+                            <ScramblePrompt sentence={tSentence}/>
+                        </div>
+                        <ScrambleDraggables sentence={tSentence}/>
                     </Stack>
                 )}
             </Stack>
