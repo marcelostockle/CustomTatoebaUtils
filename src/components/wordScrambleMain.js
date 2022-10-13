@@ -15,30 +15,39 @@ const WordScrambleMain = () => {
         translations: [[]]
     }}
     const [sentence, setSentence] = useState(defSentence)
+    const [activeRow, setActiveRow] = useState(-1)
     // Component outline
     return (
         <div className="wordScrambleMain">
             <Stack direction="column" alignItems="flex-start" width="inherit">
-                <ControlRow setSentence={setSentence}/>
+                <ControlRow setSentence={setSentence} setActiveRow={setActiveRow}/>
                 <div className="mainSentenceRow">
                     <a href={`https://tatoeba.org/en/sentences/show/${sentence.sentence.id}`}
-                        style={{display: "flex", alignItems: "center"}}>
-                        <Info color="action"/>
+                        className="info-cell">
+                        <Info color="action" paddingLeft="0.3rem"/>
                     </a>
                     <LangFlag lang={sentence.sentence.lang}/>
                     <h2 className="mainSentence">{sentence.sentence.text}</h2>
                 </div>
-                {sentence.sentence.translations[0].map(tSentence =>
+                {sentence.sentence.translations[0].map((tSentence, tInd) =>
                     <Stack key={`s${tSentence.id}`} direction="column" width="inherit">
                         <div className="translationRow">
                             <a href={`https://tatoeba.org/en/sentences/show/${tSentence.id}`}
-                                style={{display: "flex", alignItems: "center"}}>
+                                className="info-cell">
                                 <Info color="action"/>
                             </a>
                             <LangFlag lang={tSentence.lang}/>
-                            <ScramblePrompt sentence={tSentence}/>
+                            <ScramblePrompt
+                                sentence={tSentence}
+                                index={tInd}
+                                setActiveRow={setActiveRow}
+                            />
                         </div>
-                        <ScrambleDraggables sentence={tSentence}/>
+                        <ScrambleDraggables
+                            sentence={tSentence}
+                            index={tInd}
+                            activeRow={activeRow}
+                        />
                     </Stack>
                 )}
             </Stack>

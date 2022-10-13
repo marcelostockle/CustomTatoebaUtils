@@ -25,6 +25,11 @@ body {
   justify-content: center;
   gap: 2rem 3rem;
 }
+.info-cell {
+  display: flex;
+  align-items: center;
+  padding-left: 0.3rem;
+}
 @media (min-width: 768px) {
   .content-block {
     grid-template-columns: repeat(2, 1fr)

@@ -23,7 +23,7 @@
 }
 .draggablesTop {
     width: inherit;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: center;
     background-color: honeydew;
@@ -38,4 +38,7 @@
 }
 .draggable:hover {
     background-color:salmon;
+}
+.draggableCell {
+    margin: 0.25rem 0 0.25rem;
 }
