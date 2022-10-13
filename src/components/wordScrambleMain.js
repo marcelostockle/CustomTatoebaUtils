@@ -16,6 +16,7 @@ const WordScrambleMain = () => {
     }}
     const [sentence, setSentence] = useState(defSentence)
     const [activeRow, setActiveRow] = useState(-1)
+    const [newQuery, setNewQuery] = useState({})
     // Component outline
     return (
         <div className="wordScrambleMain">
@@ -41,12 +42,14 @@ const WordScrambleMain = () => {
                                 sentence={tSentence}
                                 index={tInd}
                                 setActiveRow={setActiveRow}
+                                newQuery={newQuery}
                             />
                         </div>
                         <ScrambleDraggables
                             sentence={tSentence}
                             index={tInd}
                             activeRow={activeRow}
+                            setNewQuery={setNewQuery}
                         />
                     </Stack>
                 )}
