@@ -21,7 +21,11 @@ const WordScrambleMain = () => {
     return (
         <div className="wordScrambleMain">
             <Stack direction="column" alignItems="flex-start" width="inherit">
-                <ControlRow setSentence={setSentence} setActiveRow={setActiveRow}/>
+                <ControlRow
+                    setSentence={setSentence}
+                    setActiveRow={setActiveRow}
+                    setNewQuery={setNewQuery}
+                />
                 <div className="mainSentenceRow">
                     <a href={`https://tatoeba.org/en/sentences/show/${sentence.sentence.id}`}
                         className="info-cell">

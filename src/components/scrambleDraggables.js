@@ -16,13 +16,13 @@ const ScrambleDraggables = (props) => {
     >
       {
         split.map((word, i) => {
-          const content = word.match(MidContent)
+          const content = word.match(MidContent).toString().toLowerCase()
           return (
           <span
             key={`d${sentence.id}-${i}`}
             className="draggable"
             onClick={() => setNewQuery({content, index})}>
-            {content.toString().toLowerCase()}
+            {content}
           </span>)
         })
       }

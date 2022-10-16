@@ -8,7 +8,7 @@ import fetchAPI from '../fetchAPI'
 import langList from '../langList.json'
 
 const ControlRow = (props) => {
-  const { setSentence, setActiveRow } = props
+  const { setSentence, setActiveRow, setNewQuery } = props
   const [lang, setLang] = useState('und')
   const handleChange = (event) => {
     setLang(event.target.value);
@@ -39,6 +39,7 @@ const ControlRow = (props) => {
         onClick={() => {
           fetchAPI(setSentence, lang)
           setActiveRow(-1)
+          setNewQuery({})
         }}
       >Next</Button>
     </Stack>

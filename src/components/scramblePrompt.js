@@ -14,6 +14,8 @@ const ScramblePrompt = (props) => {
         i === nextEmpty ? newQuery.content : entry
       ))
       setNextEmpty(nextEmpty + 1)
+    } if (!newQuery) {
+      setContent(Array(split.length).fill('____'))
     }
   }, [newQuery])
   return (
@@ -25,7 +27,7 @@ const ScramblePrompt = (props) => {
       split.map((word, index) => {
         const prefix = word.match(PrefixSymbols)
         const suffix = word.match(SuffixSymbols)
-        const solution = word.match(MidContent)
+        const solution = word.match(MidContent).toString().toLowerCase()
         return (
           <span className="target-cell">
             <input type="hidden" value={solution}/>
