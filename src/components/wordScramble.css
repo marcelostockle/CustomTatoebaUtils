@@ -41,7 +41,10 @@
     border-color:darkslategray;
 }
 .draggable:hover {
-    background-color:salmon;
+    background-color:lavender;
+}
+.highlight {
+    background-color:lightgreen;
 }
 .target-cell {
     margin: 0.25rem 0 0.25rem;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { MidContent } from '../regex_expressions'
 import shuffle from 'knuth-shuffle-seeded'
 import './wordScramble.css'
@@ -6,6 +6,7 @@ import './wordScramble.css'
 const ScrambleDraggables = (props) => {
   const { sentence, index, activeRow, setNewQuery } = props
   const split = shuffle(sentence.text.split(/\s/), sentence.id)
+  const [activeCells, setActiveCells] = useState(Array(split.length).fill(false))
   const styles = {
     display: "flex"
   }
@@ -17,11 +18,17 @@ const ScrambleDraggables = (props) => {
       {
         split.map((word, i) => {
           const content = word.match(MidContent).toString().toLowerCase()
+          const handleClick = () => {
+            setNewQuery({content, index, remove: activeCells[i]})
+            setActiveCells(activeCells.map(
+              (cell, j) => i === j ? !cell : cell)
+            )
+          }
           return (
           <span
             key={`d${sentence.id}-${i}`}
-            className="draggable"
-            onClick={() => setNewQuery({content, index})}>
+            className={activeCells[i] ? "draggable highlight" : "draggable"}
+            onClick={() => handleClick()}>
             {content}
           </span>)
         })
