@@ -6,6 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import fetchAPI from '../fetchAPI'
 import langList from '../langList.json'
+import LoadingLabel from './loadingLabel';
 
 const ControlRow = (props) => {
   const { setSentence, setActiveRow, setNewQuery } = props
@@ -15,6 +16,7 @@ const ControlRow = (props) => {
   }
   return (
     <Stack direction="row" justifyContent="flex-end" width="inherit" paddingBottom="0.4rem">
+      <LoadingLabel/>
       <div className="lang-select">
         <InputLabel>Age</InputLabel>
         <Select

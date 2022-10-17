@@ -16,6 +16,7 @@
     "web-vitals": "^2.1.4",
     "http-proxy-middleware": "^2.0.6",
     "knuth-shuffle-seeded": "^1.0.6",
+    "react-promise-tracker": "^2.1.0",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.6",
