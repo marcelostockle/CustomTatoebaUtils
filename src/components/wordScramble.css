@@ -17,7 +17,7 @@
     align-items: center;
     width: inherit;
 }
-.inlineBlank {
+.inline-blank {
     padding: 0.1rem 0.2rem;
     margin: 0.2rem 0.2rem 0 0.2rem;
     border-style: solid;
@@ -25,6 +25,16 @@
     border-radius: 3px;
     border-color: darkcyan;
 }
+.correct {
+    background-color:limegreen;
+}
+.incorrect {
+    background-color:red;
+}
+.hide-solution {
+    background-color: white;
+}
+
 .draggablesTop {
     width: inherit;
     display: none;
