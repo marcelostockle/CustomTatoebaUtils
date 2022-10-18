@@ -6,7 +6,7 @@ const fetchPromise = async (setSentence, lang) => {
       "accept": "application/json, text/plain, */*",
       "accept-language": "en-US,en;q=0.9,ja;q=0.8",
     }
-    const req = process.env.NETLIFY ? {
+    const req = process.env.NODE_ENV === 'production' ? {
         method: "GET",
         url: "/.netlify/functions/tatoeba-random",
         params: {lang, headers}
