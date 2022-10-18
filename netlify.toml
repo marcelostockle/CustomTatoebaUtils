@@ -1,4 +1,0 @@
-[[redirects]]
-  from = "/en/sentences/random/*"
-  to = "https://tatoeba.org"
-  force = true
