@@ -12,12 +12,11 @@ export const handler = async (event, context) => {
     headers
   })
   const res = await response.json()
-  const data = res.data
 
   return {
     statusCode: 200,
     body: JSON.stringify({
-      data
+      res
     })
   }
 }
