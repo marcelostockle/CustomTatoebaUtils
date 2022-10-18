@@ -1,15 +1,14 @@
 import fetch from 'node-fetch'
 
 export const handler = async (event, context) => {
-  const API_ENDPOINT = `https://tatoeba.org/en/sentences/random/${event.queryStringParameters.lang}`
+  const {lang, headers} = event.queryStringParameters
+  const API_ENDPOINT = `https://tatoeba.org/en/sentences/random/${lang}`
   const response = await fetch(API_ENDPOINT, {
     method: 'get',
-    headers: {
-      "accept": "application/json, text/plain, */*",
-      "accept-language": "en-US,en;q=0.9,ja;q=0.8",
-    }
+    headers
   })
-  const data = await response.json()
+  const res = await response.json()
+  const data = res.data
 
   return {
     statusCode: 200,
