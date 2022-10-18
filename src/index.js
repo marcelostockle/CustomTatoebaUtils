@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+console.log(process.env)
 console.log("NETLIFY deploy: ", process.env.NETLIFY)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
