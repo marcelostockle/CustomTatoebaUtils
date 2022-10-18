@@ -1,12 +1,12 @@
 import axios from 'axios'
 import { trackPromise } from 'react-promise-tracker'
 
-export default function fetchAPI(setSentence, lang) {
+const fetchAPI = async (setSentence, lang) => {
     trackPromise(
-        axios({
+        await axios({
             method: "GET",
-            url: `/.netlify/functions/tatoeba-random/${lang}`,
-            params: {},
+            url: `/.netlify/functions/tatoeba-random`,
+            params: {lang},
             headers: {
                 "accept": "application/json, text/plain, */*",
                 "accept-language": "en-US,en;q=0.9,ja;q=0.8",
@@ -24,3 +24,5 @@ export default function fetchAPI(setSentence, lang) {
         })
     )
 }
+
+export default fetchAPI

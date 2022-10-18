@@ -1,9 +1,7 @@
 import fetch from 'node-fetch'
 
 export const handler = async (event, context) => {
-  console.log("event:", event)
-  console.log("context:",context)
-  const API_ENDPOINT = 'https://tatoeba.org/en/sentences/random/spa'
+  const API_ENDPOINT = `https://tatoeba.org/en/sentences/random/${event.params.lang}`
   const response = await fetch(API_ENDPOINT)
   const data = await response.json()
 
