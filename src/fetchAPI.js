@@ -5,7 +5,7 @@ export default function fetchAPI(setSentence, lang) {
     trackPromise(
         axios({
             method: "GET",
-            url: `/en/sentences/random/${lang}`,
+            url: `/.netlify/functions/tatoeba-random/${lang}`,
             params: {},
             headers: {
                 "accept": "application/json, text/plain, */*",
