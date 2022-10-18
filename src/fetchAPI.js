@@ -8,8 +8,8 @@ const fetchPromise = async (setSentence, lang) => {
         params: {lang},
     })
     const { data } = await res
-    setSentence(res.data)
-    console.log(res.data)
+    setSentence(data.data)
+    console.log(data.data)
 }
 const fetchAPI = (setSentence, lang) => {
     trackPromise(fetchPromise(setSentence, lang))
