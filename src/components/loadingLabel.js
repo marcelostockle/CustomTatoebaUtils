@@ -9,7 +9,7 @@ const LoadingLabel = () => {
     promiseInProgress &&
     <span className="loading-label-top">
       <AutorenewIcon/>
-      <span>Loading...</span>
+      <span style={{marginLeft:"0.3rem"}}>Loading...</span>
     </span>
   )
 }
