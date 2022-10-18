@@ -9,7 +9,7 @@ const fetchPromise = async (setSentence, lang) => {
     const req = process.env.NODE_ENV === 'production' ? {
         method: "GET",
         url: "/.netlify/functions/tatoeba-random",
-        params: {lang, headers}
+        params: {lang}
     } : {
         method: "GET",
         url: `/en/sentences/random/${lang}`,
