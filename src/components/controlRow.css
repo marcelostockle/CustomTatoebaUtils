@@ -5,7 +5,7 @@
   padding-bottom: 0.4rem;
 }
 .control-row-btn {
-  min-width: 6.5rem;
+  min-width: 3rem;
   display: flex;
   justify-content: center;
   margin: auto 0.4rem;
@@ -19,4 +19,9 @@
 .control-row-btn:hover {
   color: rgb(80, 95, 80);
   background-color: white;
+}
+@media (min-width: 768px) {
+  .control-row-btn {
+    min-width: 5.5rem;
+  }
 }
