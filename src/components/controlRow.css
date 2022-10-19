@@ -1,0 +1,27 @@
+.control-row {
+  display: flex;
+  justify-content: flex-end;
+  width: inherit;
+  padding-bottom: 0.4rem;
+}
+.control-row-btn {
+  min-width: 3rem;
+  display: flex;
+  justify-content: center;
+  margin: auto 0.4rem;
+  padding-block: 0.5rem;
+  border-radius: 3px;
+  border-color: rgb(80, 95, 80);
+  border-style: groove;
+  color: white;
+  background-color: rgb(80, 95, 80);
+}
+.control-row-btn:hover {
+  color: rgb(80, 95, 80);
+  background-color: white;
+}
+@media (min-width: 768px) {
+  .control-row-btn {
+    min-width: 5.5rem;
+  }
+}

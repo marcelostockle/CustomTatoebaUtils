@@ -53,6 +53,7 @@ const WordScrambleMain = () => {
                             sentence={tSentence}
                             index={tInd}
                             activeRow={activeRow}
+                            newQuery={newQuery}
                             setNewQuery={setNewQuery}
                         />
                     </Stack>
