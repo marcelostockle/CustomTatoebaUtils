@@ -1,6 +1,20 @@
+h2 {
+    font-size: 1.2em;
+    font-weight: 400;
+}
 .wordScrambleMain {
-    width: 40rem;
+    width: 90%;
     margin: 0 auto;
+}
+@media (min-width: 768px) {
+    h2 {
+        font-size: 1.5em;
+        font-weight: 600;
+    }
+    .wordScrambleMain {
+        width: 50%;
+        margin: 0 auto;
+    }
 }
 .lang-select {
     width: 10rem;
@@ -26,10 +40,10 @@
     border-color: darkcyan;
 }
 .correct {
-    background-color:limegreen;
+    background-color:rgba(90, 255, 255);
 }
 .incorrect {
-    background-color:red;
+    background-color:rgba(210, 140, 40);
 }
 .hide-solution {
     background-color: white;

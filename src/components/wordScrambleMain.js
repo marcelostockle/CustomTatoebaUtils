@@ -20,7 +20,7 @@ const WordScrambleMain = () => {
     // Component outline
     return (
         <div className="wordScrambleMain">
-            <Stack direction="column" alignItems="flex-start" width="inherit">
+            <Stack direction="column" alignItems="flex-start" width="100%">
                 <ControlRow
                     setSentence={setSentence}
                     setActiveRow={setActiveRow}
