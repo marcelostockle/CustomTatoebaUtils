@@ -12,7 +12,7 @@ const ScramblePrompt = (props) => {
   
   // React to new input from ScrambleDraggables
   useEffect(() => {
-    if (newQuery) {
+    if (Object.keys(newQuery).length > 0) {
       if (newQuery.index === index) {
         // Replace single cell content (replace / remove)
         const replaceInd = newQuery.remove ?
@@ -24,6 +24,7 @@ const ScramblePrompt = (props) => {
       }
     } else {
       // Empty query: empty all cells
+      console.log("I'm doing my job")
       setContent(Array(split.length).fill(emptyCell))
     }
   }, [newQuery])
