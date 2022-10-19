@@ -49,19 +49,19 @@ const ScramblePrompt = (props) => {
       onClick={() => setActiveRow(index)}
     >
     {
-      split.map((word, index) => {
+      split.map((word, i) => {
         const prefix = word.match(PrefixSymbols)
         const suffix = word.match(SuffixSymbols)
         const solution = word.match(MidContent).toString().toLowerCase()
         const jointClass = [
           "inline-blank",
           mask ? "hide-solution" : "show-solution",
-          solution === content[index] ? "correct" : "incorrect"
+          solution === content[i] ? "correct" : "incorrect"
         ].join(' ')
         return (
-          <span className="target-cell">
+          <span key={`cell-${index}-${i}`} className="target-cell">
             {prefix}
-            <span className={jointClass}>{content[index]}</span>
+            <span className={jointClass}>{content[i]}</span>
             {suffix}
           </span>
         )
