@@ -1,28 +1,27 @@
 import React, {useState} from 'react'
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import fetchAPI from '../fetchAPI'
 import langList from '../langList.json'
 import LoadingLabel from './loadingLabel';
+import './controlRow.css'
 
 const ControlRow = (props) => {
   const { setSentence, setActiveRow, setNewQuery } = props
   const [lang, setLang] = useState('und')
-  const handleChange = (event) => {
+  const handleSelectChange = (event) => {
     setLang(event.target.value);
   }
   return (
-    <Stack direction="row" justifyContent="flex-end" width="inherit" paddingBottom="0.4rem">
+    <div className="control-row">
       <LoadingLabel/>
       <div className="lang-select">
         <InputLabel>Age</InputLabel>
         <Select
           value={lang}
           label="Language"
-          onChange={handleChange}
+          onChange={handleSelectChange}
         >
           {
             Object.entries(langList)
@@ -35,16 +34,19 @@ const ControlRow = (props) => {
           }
         </Select>
       </div>
-      <Button
-        variant="contained"
-        sx={{m:"auto 0"}}
+      <span
+        className="control-row-btn"
+        onClick={() => setNewQuery({})}
+      >Clear</span>
+      <span
+        className="control-row-btn"
         onClick={() => {
           fetchAPI(setSentence, lang)
           setActiveRow(-1)
           setNewQuery({})
         }}
-      >Next</Button>
-    </Stack>
+      >Next</span>
+    </div>
   )
 }
 
