@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import FormControl from '@mui/material/FormControl';
 import fetchAPI from '../fetchAPI'
 import langList from '../langList.json'
 import LoadingLabel from './loadingLabel';
@@ -15,8 +16,7 @@ const ControlRow = (props) => {
   }
   return (
     <div className="control-row">
-      <LoadingLabel/>
-      <div className="lang-select">
+      <FormControl sx={{ m: "auto", minWidth: "3rem" }} size="small">
         <InputLabel>Age</InputLabel>
         <Select
           value={lang}
@@ -33,7 +33,8 @@ const ControlRow = (props) => {
               })
           }
         </Select>
-      </div>
+      </FormControl>
+      <LoadingLabel/>
       <span
         className="control-row-btn"
         onClick={() => setNewQuery({})}

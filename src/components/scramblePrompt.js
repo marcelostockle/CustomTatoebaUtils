@@ -24,7 +24,6 @@ const ScramblePrompt = (props) => {
       }
     } else {
       // Empty query: empty all cells
-      console.log("I'm doing my job")
       setContent(Array(split.length).fill(emptyCell))
     }
   }, [newQuery])
